@@ -36,8 +36,26 @@ const Part = (props: Courses) => {
                 <p>Exercises: {course.exerciseCount}</p>
               </div>
             );
+          case "special":
+            return (
+              <div key={course.name}>
+                <p>
+                  <strong>Course Name: </strong> {course.name}
+                </p>
+                <p>Course description: {course.description}</p>
+                <p>
+                  Requirements:
+                  <ul>
+                    {course.requirements.map((requirement) => (
+                      <li key={requirement}>{requirement}</li>
+                    ))}
+                  </ul>
+                </p>
+                <p>Exercises: {course.exerciseCount}</p>
+              </div>
+            );
           default:
-            return null;
+            return <>Not listed</>;
         }
       })}
     </>
