@@ -1,5 +1,4 @@
 import Header from "./components/Header";
-import Content from "./components/Content";
 import Total from "./components/Total";
 import Part from "./components/Part";
 
@@ -72,7 +71,6 @@ const App = () => {
   return (
     <div>
       <Header name={courseName} />
-      {/* <Content courses={courseParts} /> */}
       <Part courses={courseParts} />
       <Total courses={courseParts} />
     </div>
