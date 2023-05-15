@@ -1,10 +1,7 @@
-export interface Course {
-  name: string;
-  exerciseCount: number;
-}
+import { CoursePart } from "../App";
 
 export interface Courses {
-  courses: Course[];
+  courses: CoursePart[];
 }
 
 const Content = (props: Courses) => {
