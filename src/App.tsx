@@ -1,14 +1,18 @@
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Total from "./components/Total";
+import Part from "./components/Part";
 
 export interface CoursePartBase {
   name: string;
   exerciseCount: number;
 }
 
-export interface CoursePartBasic extends CoursePartBase {
+export interface CoursePartDescription extends CoursePartBase {
   description: string;
+}
+
+export interface CoursePartBasic extends CoursePartDescription {
   kind: "basic";
 }
 
@@ -17,8 +21,7 @@ export interface CoursePartGroup extends CoursePartBase {
   kind: "group";
 }
 
-export interface CoursePartBackground extends CoursePartBase {
-  description: string;
+export interface CoursePartBackground extends CoursePartDescription {
   backgroundMaterial: string;
   kind: "background";
 }
@@ -69,7 +72,8 @@ const App = () => {
   return (
     <div>
       <Header name={courseName} />
-      <Content courses={courseParts} />
+      {/* <Content courses={courseParts} /> */}
+      <Part courses={courseParts} />
       <Total courses={courseParts} />
     </div>
   );
