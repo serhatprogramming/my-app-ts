@@ -9,49 +9,51 @@ const Part = (props: Courses) => {
             return (
               <div key={course.name}>
                 <p>
-                  <strong>Course Name: </strong> {course.name}
+                  <strong>
+                    {course.name} {course.exerciseCount}
+                  </strong>{" "}
+                  <br />
+                  {course.description}
                 </p>
-                <p>Course description: {course.description}</p>
-                <p>Exercises: {course.exerciseCount}</p>
               </div>
             );
           case "group":
             return (
               <div key={course.name}>
                 <p>
-                  <strong>Course Name: </strong> {course.name}
+                  <strong>
+                    {course.name} {course.exerciseCount}
+                  </strong>{" "}
+                  <br />
+                  project exercises: {course.groupProjectCount}
                 </p>
-                <p>Projects: {course.groupProjectCount}</p>
-                <p>Exercises: {course.exerciseCount}</p>
               </div>
             );
           case "background":
             return (
               <div key={course.name}>
                 <p>
-                  <strong>Course Name: </strong> {course.name}
+                  <strong>
+                    {course.name} {course.exerciseCount}
+                  </strong>
+                  <br />
+                  {course.description} <br />
+                  {course.backgroundMaterial}{" "}
                 </p>
-                <p>Course description: {course.description}</p>
-                <p>Background Material: {course.backgroundMaterial}</p>
-                <p>Exercises: {course.exerciseCount}</p>
               </div>
             );
           case "special":
             return (
               <div key={course.name}>
                 <p>
-                  <strong>Course Name: </strong> {course.name}
+                  <strong>
+                    {course.name} {course.exerciseCount}
+                  </strong>
+                  <br />
+                  {course.description}
+                  <br />
+                  required skilss: <>{course.requirements.join(", ")}</>
                 </p>
-                <p>Course description: {course.description}</p>
-                <p>
-                  Requirements:
-                  <ul>
-                    {course.requirements.map((requirement) => (
-                      <li key={requirement}>{requirement}</li>
-                    ))}
-                  </ul>
-                </p>
-                <p>Exercises: {course.exerciseCount}</p>
               </div>
             );
           default:
